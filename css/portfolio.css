@@ -151,3 +151,10 @@ a:hover {
         display:flex;
     }
 }
+
+
+/* Sections */
+.rounded-circle{
+    border-radius:5%; 
+    border: solid grey 5px;
+}
