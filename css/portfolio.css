@@ -263,7 +263,7 @@ section{
     position: relative;
 }
 
-.btn-containers{
+.about-containers{
     gap: 2rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -274,12 +274,13 @@ section{
     flex-direction: column;
 }
 
-.about-containers, .about-details-container {
+.about-containers,
+.about-details-container {
     display: flex;
 }
 
 .about-pic{
-    border-radius: 2rem;;
+    border-radius: 2rem;
 }
 
 .arrow {
@@ -287,4 +288,12 @@ section{
     right: -5rem;
     bottom: 2.5rem;
 }
-
+.details-container{
+    padding: 1.5rem;
+    flex: 1;
+    background: white;
+    border-radius: 2rem;
+    border: rgb(53,53,53) 0.1rem solid;
+    border-color: rgb(163, 163, 163);
+    text-align: center;
+}
