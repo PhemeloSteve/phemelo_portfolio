@@ -142,17 +142,6 @@ a:hover {
 }
 
 
-/*Mediaquerues*/
-@media screen and (max-width:1200px){
-    #desktop-nav{
-        display:none;
-    }
-    #hamburger-nav{
-        display:flex;
-    }
-}
-
-
 /* Sections */
 
 .rounded-circle{
