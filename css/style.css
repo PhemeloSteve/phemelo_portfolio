@@ -281,4 +281,24 @@ section{
     height: 2rem;
  }
 
+/* for social*/
+.social-links {
+    display: flex;
+    gap: 20px; /* Adjust spacing between icons */
+  }
+
+  .social-links a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #333; /* Default icon color */
+  }
+
+  .social-links i {
+    font-size: 2em; /* Adjust icon size */
+  }
+
+  /* Optional: Style for hover effect */
+  .social-links a:hover i {
+    color: silver; /* Example hover color */
+  }
+
 
