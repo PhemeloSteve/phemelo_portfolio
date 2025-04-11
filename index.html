@@ -13,7 +13,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,35 +42,38 @@
   </head>
   <body> 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#experience">Experience</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#education">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div> 
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div> 
+</nav>
     <!-- Hero Section -->
     <section id="home" class="text-center text-dark bg-white py-5">
       <div class="container">
@@ -107,7 +113,22 @@
     <section id="about">
       <div class="container">
         <h1 class="text-center mb-4">About me</h1>
-        <p>This is the about section of your website. Add your content here.</p>
+        <div class="container">
+          <div class="row">
+            <!-- Contact details -->
+            <div class="col-md-6">
+              <img src="img/PhemeloSteve2.jpg" alt="Phemelo Mokwena" width="390" height="390" class="img-responsive" style="margin-bottom: 25px; border-radius: 25px;">
+            </div>
+            <div class="col-md-6"></div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light py-5">
+      <div class="container">
+        <h1 class="text-center mb-4">Projects</h1>
+        <p>This is the projects section of your website. Add your content here.</p>
       </div>
     </section>
     
@@ -124,7 +145,161 @@
     <section id="skills" class="py-5">
       <div class="container">
         <h1 class="text-center mb-4">Skills</h1>
-        <p>This is the skills section of your website. Add your content here.</p>
+        
+        <!--Programming languages-->
+        <div id="programming_languages" class="mb-4">
+          <h3 class="border-bottom pb-2 mb-3">Programming Languages</h3>
+          <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3 text-center">
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-python fa-2x mb-2" style="color: #333;"></i>
+                <h5>Python</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-csharp-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>C#</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-java fa-2x mb-2" style="color: #333;"></i>
+                <h5>Java</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-js-square fa-2x mb-2" style="color: #333;"></i>
+                <h5>JavaScript</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-html5 fa-2x mb-2" style="color: #333;"></i>
+                <h5>HTML</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-css3-alt fa-2x mb-2" style="color: #333;"></i>
+                <h5>CSS</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-latex-original fa-2x mb-2" style="color: #333;"></i>
+                <h5>LaTeX</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-matlab-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>MATLAB</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fas fa-database fa-2x mb-2" style="color: #333;"></i>
+                <h5>SQL</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Frameworks-->
+        <div id="frameworks" class="mb-4">
+          <h3 class="border-bottom pb-2 mb-3">Frameworks</h3>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 text-center">
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-dotnetcore-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>.NET Core</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Version Control-->
+        <div id="version_control" class="mb-4">
+          <h3 class="border-bottom pb-2 mb-3">Version Control</h3>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 text-center">
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-git-alt fa-2x mb-2" style="color: #333;"></i>
+                <h5>Git</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-github fa-2x mb-2" style="color: #333;"></i>
+                <h5>GitHub</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Databases-->
+        <div id="databases" class="mb-4">
+          <h3 class="border-bottom pb-2 mb-3">Databases</h3>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 text-center">
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-mysql-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>MySQL</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fas fa-table fa-2x mb-2" style="color: #333;"></i>
+                <h5>MS Access</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-microsoftsqlserver-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>MS SQL Server</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Tools-->
+        <div id="tools" class="mb-4">
+          <h3 class="border-bottom pb-2 mb-3">Tools</h3>
+          <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 text-center">
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="fab fa-ubuntu fa-2x mb-2" style="color: #333;"></i>
+                <h5>Ubuntu</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-vscode-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>VS Code</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-visualstudio-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>Visual Studio</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-jupyter-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>Jupyter Notebook</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 bg-light rounded">
+                <i class="devicon-figma-plain fa-2x mb-2" style="color: #333;"></i>
+                <h5>Figma</h5>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>  
     </section>
 
@@ -132,12 +307,23 @@
     <section id="education" class="bg-light py-5">
       <div class="container">
         <h1 class="text-center mb-4">Education</h1>
-        <!--Programming languages-->>
-        <div id="programming_languages">
-
-        </div>
-        <div id="version_control"></div>
-        <div id="tools"></div>
+        <div id="ufs">
+          <h3 class="border-bottom pb-2 mb-3">University of the Free State</h3>
+          <p>Bachelor of Science in Computer Science (2023 - Present)</p>
+          <p>Courses: Data Structures and Advanced Programming,
+            Human-Computer Iteraction,
+          Introduction to Databass and Database Management Systmes, Software Design, Scientific Computing, Vector Analysis, Squences and Series, |
+          Mechanics, Thermodynamics, Electricity| Mechanics, Optics and Electricity, Introduction to Advanced Mathematics, Calculus and Algebra, Calculus,
+          Introduction to the Internet and Web Page Development, Programming and Problem SOlving, Introduction to Computer Hardaware, Computer Architecture, 
+          Computer Networks, Operating Systems, Software Engineering, Software Testing and Quality Assurance, Software Development and Design, Software Project Management, 
+          Software Development Methodologies, Software Development Life Cycle, Software Development Process Models, Software Development Tools and Techniques, 
+          Software Development Environments, Software Development Frameworks and Libraries, Computer Literacy (Microsoft office)
+         </p>
+        </div><br>
+        <div id="highschool">
+          <h3 class="border-bottom pb-2 mb-3">Mmiditsi High School</h3>
+          <p>NSC Matric (2018 - 2022)</p>
+          <p>Subjects: Mathematics, Physical Science, Life Science, Agricultural Sciences, Sepedi Home Language, English First Additional Language, Sesotho First Additional Language</p>
       </div>
     </section>
 
@@ -147,46 +333,82 @@
         <h1 class="text-center mb-4">Contact</h1>
         <!--Contact me-->
         
-        <!-- Contact form -->
-         <div>
-          <form action="https://formspree.io/f/xjvjlqzj" method="POST">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" required>
+        <div class="container">
+          <div class="row">
+            <!-- Contact details -->
+            <div class="col-md-6">
+              <div class="p-4 rounded">
+                <h3 class="mb-4">Contact Information</h3>
+                <div id="ContactDetails" class="contact-info">
+                  <div class="mb-3">
+                    <h5><i class="bi bi-telephone-fill me-2"></i>Phone</h5>
+                    <p>
+                      <a href="tel:+27824816680">+27 82 481 6680</a>
+                    </p>
+                    <p>
+                      <a href="tel:+27607000376">+27 60 700 376</a>
+                    </p>
+                  </div>
+                  <div class="mb-3">
+                    <h5><i class="bi bi-envelope-fill me-2"></i>Email</h5>
+                    <p><a href="mailto:phemelosteve@gmail.com">phemelosteve@gmail.com</a></p>
+                    <p><a href="mailto:phemelosteve@hotmail.com">phemelosteve@hotmail.com</a></p>
+                  </div>
+                  <div class="mb-3">
+                    <h5><i class="bi bi-geo-alt-fill me-2"></i>Address</h5>
+                    <p>Bloemfontein 9321 <br>Free State<br>South Africa</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="_replyto" required>
+            <!-- Form -->
+            <div class="col-md-6">
+              <div class="p-4 rounded">
+                <h3 class="mb-4">Get in Touch</h3>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                  <input type="hidden" name="access_key" value="c67b92fc-a528-4466-9216-816f82926bb3">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="_replyto" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-dark" style="display: block; margin: 0 auto;">Send</button>
+                </form>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark">Send</button>
-          </form>
-         </div>
+          </div>
+        </div>
+        <hr class="text-center" style="margin-top: 20px; margin-bottom: 0;"><br>
          <!--Social-->
-         <div class="social-links" style="margin-top: 10px; display: flex; justify-content: center;">
+         <h4 class="text-center" style="margin-top: 20px; margin-bottom: 0;">Let us connect</h4><br>
+         <div class="social-links" style="margin-top: 0; display: flex; justify-content: center;">
           <a href="https://www.linkedin.com/in/phemelo-mokwena" target="_blank" style="text-decoration: none; color: inherit;">
-              <i class="fa fa-linkedin" style="font-size: 4em;"></i>
+              <i class="fa fa-linkedin" style="font-size: 3em;"></i>
           </a>
           <a href="https://github.com/PhemeloSteve" target="_blank" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-github" style="font-size: 4em;"></i>
+              <i class="fa fa-github" style="font-size: 3em;"></i>
           </a>
           <a href="https://leetcode.com/u/PhemeloSteve/" target="_blank" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-code" style="font-size: 4em;"></i>
+              <i class="fa fa-code" style="font-size: 3em;"></i>
           </a>
           <a href="https://twitter.com/StevePhemelo" target="_blank" title="X (Twitter)" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-twitter" style="font-size: 4em;"></i>
+              <i class="fa fa-twitter" style="font-size: 3em;"></i>
           </a>
           <a href="https://www.instagram.com/steve.phemelo/" target="_blank" title="Instagram" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-instagram" style="font-size: 4em;"></i>
+              <i class="fa fa-instagram" style="font-size: 3em;"></i>
           </a>
           <a href="https://www.facebook.com/profile.php?id=100010490740792" target="_blank" title="Facebook" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-facebook" style="font-size: 4em;"></i>
+              <i class="fa fa-facebook" style="font-size: 3em;"></i>
           </a>
           <a href="https://tryhackme.com/p/Asro.x12" target="_blank" title="TryHackMe" style="text-decoration: none; color: inherit; margin-left: 10px;">
-              <i class="fa fa-shield-halved" style="font-size: 4em;"></i>
+              <i class="fa fa-shield-halved" style="font-size: 3em;"></i>
           </a>
         </div>
       </div>
