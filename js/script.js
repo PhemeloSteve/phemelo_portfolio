@@ -76,3 +76,50 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+// Function to handle the scroll event and highlight the active link
+  document.addEventListener('DOMContentLoaded', function() {
+    // Variable to store navbar element
+    const navbar = document.getElementById('mainNav');
+    
+    // Function to handle scroll event
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initialize on page load
+    handleScroll();
+    
+    // Active link highlighting on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+    
+    function highlightNavLink() {
+      let scrollPosition = window.scrollY + 100;
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + sectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }
+    
+    // Call on scroll
+    window.addEventListener('scroll', highlightNavLink);
+  });
