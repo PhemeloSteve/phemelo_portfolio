@@ -301,4 +301,68 @@ section{
     color: silver; /* Example hover color */
   }
 
+  #ContactDetails a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #333; /* Default icon color */
+  }
+  #ContactDetails a:hover {
+    color: silver;
+  }
 
+  /* Add padding to body to prevent content from hiding behind the fixed navbar */
+  body {
+    padding-top: 56px; /* Adjust this value according to your navbar height */
+  }
+
+  /* Make navbar transparent initially, then add background on scroll */
+  #mainNav {
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    box-shadow: none;
+  }
+
+  #mainNav.navbar-scrolled {
+    background-color: rgba(33, 37, 41, 0.95) !important; /* Darker with slight transparency */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+    /* Responsive Styles */ 
+@media (max-width: 768px) {
+        .section-container{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .about-containers{
+            flex-direction: column;
+        }
+        #profile{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        ._btn-container{
+            flex-direction: column;
+        }
+        .about-details-container{
+            width: 100%;
+        }
+    }
+@media (max-width: 576px) {
+        .section-container{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .about-containers{
+            flex-direction: column;
+        }
+        #profile{
+            flex-direction: column;
+            gap: 2rem;
+        }
+        ._btn-container{
+            flex-direction: column;
+        }
+        .about-details-container{
+            width: 100%;
+        }
+    }
