@@ -1,2 +1,2 @@
 # phemelo_portfolio
-<p>Portfolio link: <a href="phemelosteve.co.za">www.phemelosteve.co.za</a></p>
+<p>Portfolio link: <a href="https://phemelosteve.co.za" target="_blank">www.phemelosteve.co.za</a></p>
