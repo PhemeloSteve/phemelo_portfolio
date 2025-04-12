@@ -314,6 +314,21 @@ section{
     padding-top: 56px; /* Adjust this value according to your navbar height */
   }
 
+  #skills div {
+    border-radius: 25px;
+  }
+
+  #projects a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+  }
+  #projects a:hover{
+    text-decoration: none;
+    color: silver;
+  }
+
+
   /* Make navbar transparent initially, then add background on scroll */
   #mainNav {
     transition: background-color 0.3s ease, padding 0.3s ease;
