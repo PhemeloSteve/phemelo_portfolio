@@ -16,7 +16,7 @@ html{
     scroll-behavior: smooth;
 }
 
-p {
+p, li {
     color: rgb(85,85,85);
 }
 
