@@ -36,27 +36,34 @@ a,.btn{
 }
 
 section{
-    padding-top: 4vh;
-    height: 96vh;
-    margin: 0 10rem;
-    min-height: fit-content;
+    padding: 4rem 0;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 90%;
 }
 
 .section-container{
     display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
 /* Profile Section */
 #profile{
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 5rem;
-    height: 80vh;
+    min-height: calc(100vh - 56px);
+    padding: 2rem 0;
 }
 
 .section_pic-container{
-    display:flex;
-    margin:0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 .section_text{
@@ -179,7 +186,8 @@ section{
 }
 
 .about_pic-container{
-    height: 2000px;
+    max-width: 400px;
+    width: 100%;
     margin: auto 0;
 }
 /* Experince section */
@@ -231,8 +239,10 @@ section{
  }
  .project-img{
     border-radius: 2rem;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
  }
 
  .project-title{
@@ -246,20 +256,27 @@ section{
 
  /* Contact*/
  #contact {
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 70vh;
- }
- .contact-info-upper-container {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    border-radius: 2rem;
-    border: rgb(53,53,53) 0.1rem solid;
-    border-color: rgb(163,163,163);
-    background: rgb(250,250,250);
-    margin: 2rem auto;
-    padding: 0.5rem;
+    flex-direction: column;
+    padding: 6rem 0;
+    background-color: #ffffff;
+ }
+ 
+ #contact .container {
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+ 
+ #contact .bg-light {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+ }
+ 
+ #contact .bg-light:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
  }
 
  .contact-info-container {
@@ -284,21 +301,39 @@ section{
 /* for social*/
 .social-links {
     display: flex;
-    gap: 20px; /* Adjust spacing between icons */
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .social-links a {
-    text-decoration: none; /* Remove underlines from links */
-    color: #333; /* Default icon color */
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: #f8f9fa;
   }
 
-  .social-links i {
-    font-size: 2em; /* Adjust icon size */
+  .social-links i,
+  .social-links svg {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
   }
 
-  /* Optional: Style for hover effect */
-  .social-links a:hover i {
-    color: silver; /* Example hover color */
+  .social-links a:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+  }
+
+  .social-links a:hover i,
+  .social-links a:hover svg {
+    color: #fff;
+    fill: #fff;
   }
 
   #ContactDetails a {
