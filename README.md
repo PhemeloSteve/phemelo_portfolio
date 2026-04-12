@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing my skills, projects, and experience as a software developer.
 
 ## 🚀 Live Demo
-[View Portfolio](https://phemelo-portfolio.netlify.app/) <!-- Update with your actual URL -->
+[View Portfolio](https://phemelosteve.github.io/phemelo_portfolio/#) 
 
 ## 🛠️ Tech Stack
 
