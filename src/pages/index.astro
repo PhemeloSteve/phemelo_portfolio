@@ -1,0 +1,137 @@
+---
+import Base from "../layouts/Base.astro";
+import Doodles from "../components/Doodles.astro";
+import Sidebar from "../components/Sidebar.astro";
+import SocialRail from "../components/SocialRail.astro";
+import ContactForm from "../components/ContactForm.astro";
+import {
+  site, hero, pipeline, about, projects, skillGroups, certifications, experience,
+} from "../data/site";
+---
+<Base title={site.title} description={site.description}>
+  <div class="layout">
+    <Doodles />
+    <Sidebar />
+    <SocialRail />
+
+    <div class="main">
+      <main id="main">
+        <section id="home" class="hero">
+          <div class="wrap hero-grid">
+            <div>
+              <h1>{hero.titleTop}<br /><span class="accent">{hero.titleAccent}</span></h1>
+              <p class="lead">{hero.intro}</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="#contact">Hire me</a>
+                {site.links.cv && <a class="btn btn-secondary" href={site.links.cv} download>Download CV</a>}
+              </div>
+            </div>
+            <aside class="card pipeline" aria-labelledby="pipeline-title">
+              <h2 id="pipeline-title" class="card-label">{pipeline.title}</h2>
+              <ul class="stages">
+                {pipeline.stages.map((stage) => <li>{stage}</li>)}
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <section id="about">
+          <div class="wrap split">
+            <div>
+              <h2>About <span class="accent">me</span></h2>
+              {about.paragraphs.map((p) => <p class="body">{p}</p>)}
+            </div>
+            <dl class="card facts">
+              {about.facts.map((f) => (
+                <div><dt>{f.label}</dt><dd>{f.value}</dd></div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section id="works">
+          <div class="wrap">
+            <h2>My recent <span class="accent">works</span></h2>
+            <div class="grid grid-projects">
+              {projects.map((p) => (
+                <article class="card project">
+                  <h3>{p.name}</h3>
+                  <p class="body">{p.summary}</p>
+                  {p.detail && <p class="small">{p.detail}</p>}
+                  <p class="tags">{p.tags.join(" · ")}</p>
+                  {p.links.length > 0 && (
+                    <p class="actions">
+                      {p.links.map((l, i) => (
+                        <a class={i === 0 ? "btn btn-primary btn-sm" : "btn btn-secondary btn-sm"} href={l.href}>{l.label}</a>
+                      ))}
+                    </p>
+                  )}
+                  {p.note && <p class="small">{p.note}</p>}
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="skills">
+          <div class="wrap">
+            <h2>Skills and <span class="accent">certifications</span></h2>
+            <div class="grid grid-skills">
+              {skillGroups.map((s) => (
+                <div>
+                  <h3 class="group">{s.group}</h3>
+                  <p class="small">{s.items}</p>
+                </div>
+              ))}
+            </div>
+            <div class="grid grid-certs">
+              {certifications.map((c) => (
+                <div class:list={["card", "cert", { planned: c.planned }]}>
+                  <strong>{c.name}</strong>
+                  <span class="small">{c.detail}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <div class="wrap">
+            <h2>My <span class="accent">experience</span></h2>
+            <ol class="timeline">
+              {experience.map((e) => (
+                <li class:list={["card", "entry", { current: e.current }]}>
+                  <span class="when">{e.when}</span>
+                  <h3>{e.role}</h3>
+                  <p class="small org">{e.org}</p>
+                  <p class="small">{e.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="wrap split">
+            <div>
+              <h2>Want to work <span class="accent">together?</span></h2>
+              <p class="body">Open to graduate and junior roles in software development, backend and cloud engineering.</p>
+              <a class="mail" href={`mailto:${site.email}`}>{site.email}</a>
+            </div>
+            <ContactForm />
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="wrap footer-inner">
+          <span class="small">© {new Date().getFullYear()} {site.name}</span>
+          <span class="footer-links">
+            <a href={site.links.github}>GitHub</a>
+            <a href={site.links.linkedin}>LinkedIn</a>
+          </span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</Base>

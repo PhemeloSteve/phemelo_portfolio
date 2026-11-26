@@ -1,0 +1,39 @@
+---
+import { site } from "../data/site";
+---
+<form id="contact-form" class="form" data-to={site.email}>
+  <div class="form-row">
+    <label>Your name
+      <input name="name" type="text" autocomplete="name" placeholder="Name" required />
+    </label>
+    <label>Your email
+      <input name="email" type="email" autocomplete="email" placeholder="Email" required />
+    </label>
+  </div>
+  <label>Your message
+    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+  </label>
+  <div class="form-actions">
+    <button class="btn btn-primary" type="submit">Send message</button>
+    <span id="form-status" role="status" aria-live="polite"></span>
+  </div>
+</form>
+
+<script>
+  // No server needed: this opens the visitor's email app with the message filled in.
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("form-status");
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+    const subject = `Portfolio message from ${name}`;
+    const body = `${message}\n\n${name}\n${email}`;
+    window.location.href =
+      `mailto:${form.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (status) status.textContent = "Opening your email app...";
+  });
+</script>
