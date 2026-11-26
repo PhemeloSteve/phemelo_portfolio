@@ -1,0 +1,12 @@
+---
+import Icon from "./Icon.astro";
+import { site } from "../data/site";
+---
+<nav class="rail" aria-label="Social links">
+  <a href={site.links.github} aria-label="GitHub profile" title="GitHub" rel="noopener">
+    <Icon name="github" />
+  </a>
+  <a href={site.links.linkedin} aria-label="LinkedIn profile" title="LinkedIn" rel="noopener">
+    <Icon name="linkedin" />
+  </a>
+</nav>

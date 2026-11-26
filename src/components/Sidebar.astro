@@ -1,0 +1,76 @@
+---
+import Icon from "./Icon.astro";
+import { site, nav } from "../data/site";
+---
+<aside class="side" aria-label="Primary">
+  <a class="item brand" href="#home" aria-label={`${site.shortName}, home`} title={site.shortName}>
+    <span class="badge">{site.initials}</span>
+    <span class="lbl">{site.shortName}</span>
+  </a>
+
+  <nav class="side-nav" aria-label="Sections">
+    {nav.map((n) => (
+      <a class="item" href={`#${n.id}`} data-nav-link aria-label={n.label} title={n.label}>
+        <Icon name={n.icon} />
+        <span class="lbl">{n.label}</span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="side-foot">
+    {site.links.cv && (
+      <a class="item" href={site.links.cv} download aria-label="Download CV" title="Download CV">
+        <Icon name="download" />
+        <span class="lbl">Download CV</span>
+      </a>
+    )}
+    <button class="item toggle" type="button" data-nav-toggle aria-expanded="true" aria-label="Collapse menu" title="Collapse or expand the menu">
+      <span class="flip"><Icon name="chevron" /></span>
+      <span class="lbl">Collapse</span>
+    </button>
+  </div>
+</aside>
+
+<script>
+  const root = document.documentElement;
+  const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+
+  function apply(collapsed: boolean) {
+    root.dataset.nav = collapsed ? "collapsed" : "expanded";
+    toggle?.setAttribute("aria-expanded", String(!collapsed));
+    toggle?.setAttribute("aria-label", collapsed ? "Expand menu" : "Collapse menu");
+  }
+
+  apply(root.dataset.nav === "collapsed");
+
+  toggle?.addEventListener("click", () => {
+    const collapsed = root.dataset.nav !== "collapsed";
+    apply(collapsed);
+    try {
+      localStorage.setItem("nav", collapsed ? "collapsed" : "expanded");
+    } catch (e) {
+      /* storage unavailable: the choice just won't be remembered */
+    }
+  });
+
+  // Highlight the link for the section currently in view.
+  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-nav-link]"));
+  const byId = new Map<string, HTMLAnchorElement>();
+  links.forEach((link) => byId.set((link.getAttribute("href") ?? "").slice(1), link));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((l) => l.removeAttribute("aria-current"));
+        byId.get(entry.target.id)?.setAttribute("aria-current", "true");
+      }
+    },
+    { rootMargin: "-40% 0px -55% 0px" },
+  );
+
+  byId.forEach((_link, id) => {
+    const section = document.getElementById(id);
+    if (section) observer.observe(section);
+  });
+</script>
